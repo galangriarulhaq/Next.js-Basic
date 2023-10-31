@@ -7,6 +7,7 @@ const Navbar = () => {
     <div className={styles.navbar}>
       <div>Navbar</div>
       <div>{data && data.user.fullname}</div>
+      <div>{data?.user?.image && <img src={data.user.image} alt={data.user.fullname} className={styles.avatar} />}</div>
       {data ? (
         <button className={styles.button} onClick={() => signOut()}>
           Sign Out
