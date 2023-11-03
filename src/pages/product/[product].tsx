@@ -22,7 +22,7 @@ const DetailProductPage = ({ product }: { product: ProductType }) => {
 export default DetailProductPage;
 
 export async function getServerSideProps({ params }: { params: { product: string } }) {
-  const res = await fetch(`http://localhost:3000/api/product/${params.product}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/product/${params.product}`);
   const response = await res.json();
 
   return {
